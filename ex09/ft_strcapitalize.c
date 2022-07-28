@@ -24,8 +24,9 @@ char	*ft_strcapitalize(char *str)
 		if (str[count] < 97 || str[count] > 122)
 		{
 			if (str[count] < 65 || str[count] > 90)
-				if (str[count + 1] >= 'a' && str[count + 1] <= 'z')
-					str[count + 1] = str[count + 1] - 'a' + 'A';
+				if (str[count] < 48 || str[count] > 57)
+					if (str[count + 1] >= 'a' && str[count + 1] <= 'z')
+						str[count + 1] = str[count + 1] - 'a' + 'A';
 		}
 		count++;
 	}
