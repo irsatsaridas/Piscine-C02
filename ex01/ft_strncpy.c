@@ -21,10 +21,9 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 	{
 		if (*(src + count) != '\0')
 			*(dest + count) = *(src + count);
-		else
-			*(dest + count) = '\0';
 		count++;
 		n--;
 	}
+	*(dest + count - 1) = '\0';
 	return (dest);
 }
