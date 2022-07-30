@@ -15,12 +15,19 @@
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
 	int	count;
+	int	control;
 
 	count = 0;
+	control = 0;
 	while (n > 0)
 	{
-		if (*(src + count) != '\0')
+		if (*(src + count) != '\0'  && control)
 			*(dest + count) = *(src + count);
+		else
+		{
+			*(dest + count) = '\0'
+			control = 0;	
+		}
 		count++;
 		n--;
 	}
