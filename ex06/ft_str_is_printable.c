@@ -19,7 +19,7 @@ int	ft_str_is_printable(char *str)
 	loc = 0;
 	while (*(str + loc) != '\0')
 	{
-		if (*(str + loc) < 32 || *(str + loc) > 127)
+		if (*(str + loc) < 32 || *(str + loc) >= 127)
 			return (0);
 		loc++;
 	}
