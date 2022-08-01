@@ -6,7 +6,7 @@
 /*   By: isaridas <isaridas@student.42istanbul.com  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/26 19:03:33 by isaridas          #+#    #+#             */
-/*   Updated: 2022/07/28 13:00:07 by isaridas         ###   ########.fr       */
+/*   Updated: 2022/07/31 15:39:39 by isaridas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,21 @@
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int	count;
-	int	control;
+	unsigned int	contr;
+	unsigned int	i;
 
-	count = 0;
-	control = 0;
-	while (n > 0)
+	i = 0;
+	contr = 1;
+	while (i < n)
 	{
-		if (*(src + count) != '\0'  && control)
-			*(dest + count) = *(src + count);
+		if (*(src + i) != '\0' && contr)
+			*(dest + i) = *(src + i);
 		else
 		{
-			*(dest + count) = '\0'
-			control = 0;	
+			*(dest + i) = '\0';
+			contr = 0;
 		}
-		count++;
-		n--;
+		i++;
 	}
-	*(dest + count - 1) = '\0';
 	return (dest);
 }
